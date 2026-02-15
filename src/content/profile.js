@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Karthikeyan",
+  name: "Mr Zee",
   role: "Software Engineer • UI/UX Designer",
   tagline:
     "Modern, minimal interfaces for products — websites, dashboards, and apps. Plus photography + builds.",
