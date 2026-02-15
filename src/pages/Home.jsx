@@ -14,15 +14,20 @@ export default function Home() {
 
   return (
     <div>
-      <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-soft md:p-10">
-        {profile.threeHero ? <ThreeHero /> : null}
+<section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+  <div className="relative min-h-[calc(100vh-72px)] overflow-hidden border-b border-white/10 bg-white/5">
+    {profile.threeHero ? <ThreeHero /> : null}
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="relative"
-        >
+
+    {/* Content stays centered + readable */}
+    <div className="mx-auto max-w-6xl px-4 py-12 md:px-8 md:py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45 }}
+        className="relative w-full"
+      >
+        <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-zinc-950/40 px-3 py-1 text-xs text-zinc-300">
             {profile.location} • Available for UI/UX + Frontend
           </div>
@@ -31,7 +36,7 @@ export default function Home() {
             {profile.tagline}
           </h1>
 
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-300 md:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
             {profile.about?.[0]}
           </p>
 
@@ -42,6 +47,7 @@ export default function Home() {
             >
               View Work <ArrowRight className="h-4 w-4" />
             </Link>
+
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white hover:bg-white/10"
@@ -55,8 +61,13 @@ export default function Home() {
               <Badge key={s}>{s}</Badge>
             ))}
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
+
 
       <div className="mt-10">
         <Section
